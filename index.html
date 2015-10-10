@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Manel Vilar's Profile</title>
+    </head>
+
+    <style>
+        body {
+            font-family: verdana, geneva, sans-serif;
+            background-color: #50514F;
+        }
+
+        .container {
+            margin: 0 auto;
+            background: #FFE066;
+            width: 28em;
+            font-weight:bold;
+            margin: 20 auto;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .element {
+           color: white;
+           border-radius: 8px;
+           padding: 10px;
+           text-align:center;
+           width: 26em;
+           margin: 20 auto;
+        }
+
+       .title {
+           background: #F25F5C;
+       }
+
+        .subtitle {
+           background: #247BA0;
+           text-align:left !important;
+        }
+
+        .blog {
+           background: #70C1B3;
+        }
+
+        .footer {
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .element a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+
+    <body>
+        <div class="container">
+            <div class="element title">
+                <h1>Manel Vilar's profile page</h1>
+            </div>
+            <div class="element subtitle">
+                Here you can access my public projects and my development blog.
+                This webpage replaces the old domain manelvf.com. You can check the reasons for this change in my blog.
+                <br/>
+                Current url: <span id="cur_domain"></span>
+            </div>
+            <div class="element blog">
+                <a href="http://manelvf.github.io/blog">Blog</a>
+            </div>
+            <div class="element footer">
+            &copy; <span id="cur_year"></span> Manel Vilar
+                <br/>
+                <a href="https://coolors.co/app/50514f-f25f5c-ffe066-247ba0-70c1b3">Color Palette</a>
+                -
+                <a href="https://twitter.com/galchwyn">@galchwyn</a>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            (function() {
+                var last_year = (new Date()).getYear() + 1900;
+                cur_year.innerHTML = last_year == 2015? last_year : "2015 - " + last_year;
+
+                cur_domain.innerHTML = window.location.hostname;
+            })();
+        </script>
+    </body>
+</html>
