@@ -45,6 +45,7 @@ Ball.prototype.init = function() {
 }
 
 Ball.prototype.draw = function() {
+  var ctx = App.ctx;
   ctx.fillStyle = "rgba(100, 255, 205, 0.5)";
   ctx.beginPath();
   ctx.arc(b.x, b.y, this.radius, 0, Math.PI*2,true);
@@ -95,6 +96,7 @@ Hero.prototype.init = function() {
 }
 
 Hero.prototype.draw = function() {
+  var ctx = App.ctx;
   ctx.fillStyle = "rgba(255, 100, 100, 0.5)";
   ctx.fillRect((this.x) - 20, (this.y) - 20, 40,40);
 
@@ -144,7 +146,8 @@ function doMovements() {
 }
 
 
-function draw(ctx) {
+function draw() {
+    var ctx = App.ctx;
 
     ctx.clearRect(0,0,App.availW,App.availH); // clear canvas
     ctx.save();
@@ -166,6 +169,7 @@ function draw(ctx) {
 
     ctx.restore();
 
+    window.requestAnimationFrame(draw);
 }
 
 function checkPositions(el1, el2) {
@@ -234,12 +238,12 @@ function init() {
 
 
   if (frame.getContext) {
-    ctx = frame.getContext("2d");
-    ctx.font = "20pt Arial";
+    App.ctx = frame.getContext("2d");
+    App.ctx.font = "20pt Arial";
 
     for (var k=0; k<n_of_balls; k++) {
 
-      var b = new Ball(ctx);
+      var b = new Ball(App.ctx);
       b.init();
       balls.push(b);
     }
@@ -252,7 +256,8 @@ function init() {
     window.onkeyup= function(e) {
       App.keypressed[e.which] = false;
     }
-    setInterval("draw(ctx)",1000/30);
+    // setInterval(function() { draw(ctx); }, 1000/30);
+    window.requestAnimationFrame(draw);
     setInterval(checkMovements,1000/30);
     setInterval(doMovements,1000/30);
   } 
