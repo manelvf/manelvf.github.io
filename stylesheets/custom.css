@@ -1,0 +1,24 @@
+
+body {
+/* Fallback for web browsers that doesn't support RGBa */
+background: rgb(255, 180, 0) transparent;
+/* RGBa with 0.6 opacity */
+background: rgba(255, 180, 0, 0.2);
+/* For IE 5.5 - 7*/
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#20FFCC00, endColorstr=#20FFCC00);
+/* For IE 8*/
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#20FFCC00, endColorstr=#20FFCC00)";
+
+}
+div.separate {
+padding-top:50px;
+}
+div.center {
+text-align:center;
+}
+span.red {
+color:red;
+}
+sub {
+font-size:0.8em;
+}
