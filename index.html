@@ -1,92 +1,192 @@
-<html>
-    <head>
-        <title>Manel Vilar's Profile</title>
-    </head>
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
 
-    <style>
-        body {
-            font-family: verdana, geneva, sans-serif;
-            background-color: #50514F;
-        }
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Manel Villar - Home Page</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-        .container {
-            margin: 0 auto;
-            background: #FFE066;
-            width: 32em;
-            font-weight:bold;
-            margin: 20 auto;
-            padding: 10px;
-            border-radius: 8px;
-        }
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        .element {
-           color: white;
-           border-radius: 8px;
-           padding: 10px;
-           text-align:center;
-           width: 30em;
-           margin: 20 auto;
-        }
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
 
-       .title {
-           background: #F25F5C;
-       }
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 
-        .subtitle {
-           background: #247BA0;
-           text-align:left !important;
-        }
-        .subtitle a {
-            color: #50514F !important;
-        }
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
-        .blog {
-           background: #70C1B3;
-        }
+</head>
+<body>
 
-        .footer {
-            font-size: 0.9em;
-            font-weight: bold;
-        }
+  <style>
+    body {
+      /* Fallback for web browsers that doesn't support RGBa */
+      background: rgb(255, 180, 0) transparent;
+      /* RGBa with 0.6 opacity */
+      background: rgba(255, 180, 0, 0.2);
+      /* For IE 5.5 - 7*/
+      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#20FFCC00, endColorstr=#20FFCC00);
+      /* For IE 8*/
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#20FFCC00, endColorstr=#20FFCC00)";
+      
+    }
+    div.separate {
+      padding-top:50px;
+    }
+    div.center {
+      text-align:center;
+    }
+    span.red {
+      color:red;
+    }
+    sub {
+      font-size:0.8em;
+    }
+  </style>
 
-        .element a {
-            text-decoration: none;
-            color: white;
-        }
-    </style>
+  <!-- Div for canvas element -->
+  <div id="screenFrame" style="position:fixed;display:none;" >
+    <canvas id="frame" width="1000" height="1000" ></canvas>
+  </div>
 
-    <body>
-        <div class="container">
-            <div class="element title">
-                <h1>Manel Vilar's profile page</h1>
-            </div>
-            <div class="element subtitle">
-                Here you can access my public projects and my development blog.
-                <br>
-                This webpage replaces the old domain manelvf.com. You can check <a href="https://manelvf.github.io/blog/2015/10/10/Space-Quest.html">the reasons for this change</a> in my blog.
-                <br/>
-                Current url: <span id="cur_domain"></span>
-            </div>
-            <div class="element blog">
-                <a href="http://manelvf.github.io/blog">Blog</a>
-            </div>
-            <div class="element footer">
-            &copy; <span id="cur_year"></span> Manel Vilar
-                <br/>
-                <a href="https://coolors.co/app/50514f-f25f5c-ffe066-247ba0-70c1b3">Color Palette</a>
-                -
-                <a href="https://twitter.com/galchwyn">@galchwyn</a>
-            </div>
 
-        </div>
+  <!-- Github ribbon -->
+  <a href="https://github.com/manelvf/manelvf"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
 
-        <script type="text/javascript">
-            (function() {
-                var last_year = (new Date()).getYear() + 1900;
-                cur_year.innerHTML = last_year == 2015? last_year : "2015 - " + last_year;
 
-                cur_domain.innerHTML = window.location.hostname;
-            })();
-        </script>
-    </body>
+	<!-- Primary Page Layout
+	================================================== -->
+
+	<!-- Delete everything in this .container and get started on your own site! -->
+
+	<div class="container">
+		<div class="sixteen columns">
+      <center>
+			<h1 class="remove-bottom" style="margin-top: 40px">Manel Villar</h1>
+      <h5>Home Page</h5>
+      </center>
+			<hr />
+		</div>
+		<div class="eight columns clearfix">
+			<h3>About me</h3>
+      <img style="float:left;padding: 0px 15px 15px 0px;" src="images/eu.jpg" widht="104" height="105" />
+      <p>Hi, I'm a professional software and web developer focused on Javascript, Python, Ruby and PHP. I'm interested in a wide range of topics: since e-commerce to graphics programming. You can browse thru my previous works from this gateway.  
+      </p>
+      <p>
+      Some time ago I started to collaborate and/or helped to initialize a few Open Source projects. Don't hesitate on contact me in order to collaborate or ask any question about them. 
+      </p>
+      <p>
+      Currently, I'm living at this place<a id="showMap" href="#"><sub>[show]</sub></a> and I'm used to work on remote. 
+      </p>
+      <p id="map" style="display:none;" >
+      <iframe width="340" height="280" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=gl&amp;geocode=&amp;q=a+pedra&amp;aq=&amp;sll=43.732648,-7.877766&amp;sspn=0.195484,0.374222&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Pedra,+Cari%C3%B1o,+A+Coru%C3%B1a,+Galicia,+Espa%C3%B1a&amp;z=14&amp;ll=43.728631,-7.876863&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=gl&amp;geocode=&amp;q=a+pedra&amp;aq=&amp;sll=43.732648,-7.877766&amp;sspn=0.195484,0.374222&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Pedra,+Cari%C3%B1o,+A+Coru%C3%B1a,+Galicia,+Espa%C3%B1a&amp;z=14&amp;ll=43.728631,-7.876863" style="color:#0000FF;text-align:left">Visualizar o mapa ampliado</a></small>
+      
+      </p>
+		</div>
+		<div class="eight columns omega">
+			<h3>Code Links</h3>
+			<p>Following links are public code repositories.</p>
+			<p>Github (<a href="http://github.com/manelvf">profile</a>):</p>
+      <ul class="square"> <li><a href="https://github.com/manelvf/Transboard">Transboard</a>: Collaborative tool for application file translations. It's goal it's to provide a way to organize translation work when multiple translatores are collaborating on the same project. Currently <a href="http://transboard.manelvf.com">in production</a>. [Ruby/Sinatra]</li>
+        <li><a href="https://github.com/manelvf/forestal2">Forestal</a>: this application was developed as part of a timber delivery company chain of tools. It's main goal is goods tracking. [Python/Django] </li>
+			</ul>
+
+      <p>My <a href="http://js1k.com">JS1K</a> and JS demo entries:</p>
+      <ul class="square">
+        <li><a href="http://js1k.com/2010-first/demos#id38">Pulse</a>. A light "pulsar" made for the first compo (2010)</li>
+        <li><a href="http://js1k.com/2012-love/demo/1025">Hidden Love</a>. Entry for 2012 compo, themed "Love"</li>
+        <li><a href="http://manelvf.com/drones">Battle of the Drones</a>. Entry for <a href="http://ludumdare.com">Ludum Dare 25</a></li>
+      </ul>
+
+
+      <p> Other projects I use to collaborate:</p>
+      <ul class="square">
+        <li><a href="http://chuza.gl">Chuza!</a>. Social network made for galician/portuguese speaking audience. Code repository is <a href="http://code.google.com/p/chuza/" >available on Google Code</a>. Based on <a href="http://meneame.net">meneame.net</a></li>
+        <li><a href="https://forxa.mancomun.org/projects/gmdicgal/" >gmDicGal</a>. It started as a GreaseMonkey Script and latter evolved as a Mozilla Firefox extension. It provides support for language dictinaries on web pages.
+        </li>
+		</div>
+
+    <div class="sixteen columns clearfix separate">
+      <div class="eight columns alpha">
+        <h3>Portfolio</h3>
+
+        <p></p>
+
+        <ul class="square">
+          <li><a href="http://https://vimeo.com/album/93295" >Ilion Tools</a>: Some videos made from the tools developed on Ilion Animation Studios [ExtJS] (2007-2009).</li>
+        </ul>
+
+        <p>List of online shops I've been involved:</p>
+        <ul class="square">
+          <li><a href="http://voguelv.com">Vogue & LV</a>: Shoe shop (2012)</li>
+          <li><a href="http://spiritmalde.com" >Spirit Malde</a>: Jewelry shop (2011)</li>
+          <li><a href="http://ruevintage74.com" >Rue Vintage 74</a>: Vintage and Fashion Shop (2010)</li>
+          <li><a href="http://conservasdecarino.com" >Conservas de Cari&ntilde;o</a>: Online canned seafood shop (2010)</li>
+        </ul>
+
+        <p>Several years ago I coded a game for MS-DOS (then Windows compatible). It was 1997, I was 18 and the game itself contains several <span class="red">[NSFW]</span> content:</p>
+        <ul class="square">
+          <li><a href="/downloads/lumeinfernal.zip" >Lume Infernal (Devil's Fire)</a></li>
+        </ul>
+      </div>
+
+      <div class="eight columns omega">
+        <h3>Contact Links</h3>
+        <p>Maybe you could find me on:</p>
+        <ul class="square">
+          <li><a href="http://twitter.com/galchwyn">Twitter</a></li>
+          <li><a href="http://facebook.com/manel.villar">Facebook</a></li>
+          <li><a href="http://http://es.linkedin.com/in/manelvillar" >LinkedIn</a></li>
+          <li>Or simply by email: <a href="mailto:manelvf@gmail.com" >manelvf@gmail.com</a></li>
+        </ul>
+      </div>
+
+    </div><!-- container -->
+
+    <div class="sixteen columns clearfix center">
+      &copy; Manel Villar 2012
+    </div><!-- container -->
+
+	</div><!-- container -->
+
+
+
+<!-- End Document
+================================================== -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34164255-1']);
+  _gaq.push(['_setDomainName', 'manelvf.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
 </html>
