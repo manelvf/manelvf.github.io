@@ -1,0 +1,30 @@
+{
+  "name": "manelvf.github.io",
+  "version": "1.0.0",
+  "description": "Manel Villar's Home Page",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "http-server": "^0.10.0"
+  },
+  "devDependencies": {
+    "babel-preset-minify": "^0.2.0"
+  },
+  "scripts": {
+    "babel": "babel js/data.js js/game.js js/main.js -o build/main.bundle.js --source-maps inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manelvf/manelvf.github.io.git"
+  },
+  "author": "Manel Villar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manelvf/manelvf.github.io/issues"
+  },
+  "homepage": "https://github.com/manelvf/manelvf.github.io#readme"
+}

@@ -2,7 +2,7 @@ var n_of_balls = 5;
 
 // return -1 or 1
 function getRandomSign() {
-  var v = Math.round(Math.random());
+  let v = Math.round(Math.random());
   if (v==0) 
     return -1;
   else 
@@ -10,20 +10,22 @@ function getRandomSign() {
 }
 
 function getRandomWithLimit(min,max) {
+  let v;
+
   do {
     // search for a nice value. If not found, try again
-    var v = Math.round(Math.random() * (max-min)) + min;
-  } while( (v>(max * App.borderLimit)) &&
-    (v< (max - (max * App.borderLimit)))
+    v = Math.round(Math.random() * (max-min)) + min;
+  } while( (v > (max * App.borderLimit)) &&
+    (v < (max - (max * App.borderLimit)))
   );
 
   return v;
 }
 
 function zeropad(v,n) {
-  z = n-String(v).length;
-  s = "";
-  for (var c = 0; c < z; c++) {
+  let z = n - String(v).length;
+  let s = "";
+  for (let c = 0; c < z; c++) {
     s += "0";
   }
   return s+v;
@@ -44,10 +46,10 @@ Ball.prototype.init = function() {
 }
 
 Ball.prototype.draw = function() {
-  var ctx = App.ctx;
+  let ctx = App.ctx;
   ctx.fillStyle = "rgba(100, 255, 205, 0.5)";
   ctx.beginPath();
-  ctx.arc(b.x, b.y, this.radius, 0, Math.PI*2,true);
+  ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2,true);
   ctx.fill();
 }
 
@@ -68,10 +70,8 @@ Ball.prototype.move = function() {
 }
 
 
-balls = [];
-
-
-App = {
+var App = {
+  balls: [],
   keypressed : [],
   keyListeners : [], // functions to listen for keys pressed
   availW: 0,
@@ -95,7 +95,7 @@ Hero.prototype.init = function() {
 }
 
 Hero.prototype.draw = function() {
-  var ctx = App.ctx;
+  let ctx = App.ctx;
   ctx.fillStyle = "rgba(255, 100, 100, 0.5)";
   ctx.fillRect((this.x) - 20, (this.y) - 20, 40,40);
 
@@ -110,8 +110,7 @@ Hero.prototype.draw = function() {
 }
 
 Hero.prototype.checkMovement = function() {
-  var that = this;
-  var p;
+  let that = this;
 
   return function() {
 
@@ -146,7 +145,8 @@ function doMovements() {
 
 
 function draw() {
-    var ctx = App.ctx;
+    let ctx = App.ctx;
+    let balls = App.balls;
 
     ctx.clearRect(0,0,App.availW,App.availH); // clear canvas
     ctx.save();
@@ -154,7 +154,7 @@ function draw() {
     hero.draw();
 
     for (var k = 0; k<balls.length; k++) {
-      b = balls[k];
+      let b = balls[k];
       b.move();
       b.draw();
     }
@@ -185,7 +185,9 @@ function checkPositions(el1, el2) {
 }
 
 function checkMovements() {
-  for(var k=0; k<balls.length; k++) {
+  let balls = App.balls;
+
+  for(let k=0; k<balls.length; k++) {
     if (checkPositions(hero, balls[k]))
       hero.init();
     if (checkPositions(balls[k], balls[(k+1)%balls.length])) {
@@ -193,7 +195,7 @@ function checkMovements() {
       balls[k].dy *= -1;
       balls[k].x += balls[k].dx*3;
       balls[k].y += balls[k].dy*3;
-      var b = balls[(k+1)%balls.length];
+      let b = balls[(k+1)%balls.length];
       b.dx *= -1;
       b.dy *= -1;
       b.x += b.dx*2;
@@ -204,6 +206,8 @@ function checkMovements() {
 
 
 function init() {
+  let winW, winH;
+
   if (document.body && document.body.offsetWidth) {
    winW = document.body.offsetWidth;
    winH = document.body.offsetHeight;
@@ -219,7 +223,7 @@ function init() {
     winH = window.innerHeight;
   }
 
-  el = document.getElementById("screenFrame");
+  let el = document.getElementById("screenFrame");
   el.style["background-color"] = "transparent";
   el.style["color"] = "red";
   el.style.left = "0px";
@@ -228,7 +232,7 @@ function init() {
   el.style.height = winH+"px";
   el.style.display="block";
 
-  frame = document.getElementById("frame");
+  let frame = document.getElementById("frame");
   frame.width = winW;
   frame.height= winH;
 
@@ -240,11 +244,10 @@ function init() {
     App.ctx = frame.getContext("2d");
     App.ctx.font = "20pt Arial";
 
-    for (var k=0; k<n_of_balls; k++) {
-
-      var b = new Ball(App.ctx);
+    for (let k=0; k<n_of_balls; k++) {
+      let b = new Ball(App.ctx);
       b.init();
-      balls.push(b);
+      App.balls.push(b);
     }
 
     hero.init();
