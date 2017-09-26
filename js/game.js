@@ -1,4 +1,3 @@
-var n_of_balls = 5;
 
 // return -1 or 1
 function getRandomSign() {
@@ -48,9 +47,11 @@ Ball.prototype.init = function() {
 Ball.prototype.draw = function() {
   let ctx = App.ctx;
   ctx.fillStyle = "rgba(100, 255, 205, 0.5)";
+  ctx.strokeStyle = "rgba(50, 200, 100, 0.8)";
   ctx.beginPath();
   ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2,true);
   ctx.fill();
+  ctx.stroke();
 }
 
 Ball.prototype.move = function() {
@@ -72,6 +73,7 @@ Ball.prototype.move = function() {
 
 var App = {
   balls: [],
+  n_of_balls: 5,
   keypressed : [],
   keyListeners : [], // functions to listen for keys pressed
   availW: 0,
@@ -98,6 +100,8 @@ Hero.prototype.draw = function() {
   let ctx = App.ctx;
   ctx.fillStyle = "rgba(255, 100, 100, 0.5)";
   ctx.fillRect((this.x) - 20, (this.y) - 20, 40,40);
+  ctx.strokeStyle = "rgba(155, 50, 50, 0.8)";
+  ctx.strokeRect((this.x) - 20, (this.y) - 20, 40,40);
 
   ctx.fillStyle = "rgba(255, 255, 100, 0.5)";
   ctx.beginPath();
@@ -244,7 +248,7 @@ function init() {
     App.ctx = frame.getContext("2d");
     App.ctx.font = "20pt Arial";
 
-    for (let k=0; k<n_of_balls; k++) {
+    for (let k=0; k<App.n_of_balls; k++) {
       let b = new Ball(App.ctx);
       b.init();
       App.balls.push(b);
