@@ -1,1 +1,70 @@
+#EXTM3U
+#EXTINF:0, tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNat8R6Nd_MBh40Z-zYCKoRzGHNHfpA7mgAU3NesYh7jlcdV-neJRjKg" tvg-name="###### -- |FR| CANALSAT FRANCE  |FR| -- ######"  group-title="FRANCE TNT",###### -- |FR| CANALSAT FRANCE  |FR| -- ######
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/22436.ts
+#EXTINF:0, tvg-id="TF1.fr" tvg-logo="http://one-iptv.com/logoX/francetnt/TF1.png" tvg-name="|FR| TF1 HD"  group-title="FRANCE TNT",|FR| TF1 HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/9211.ts
+#EXTINF:0, tvg-id="M6.fr" tvg-logo="http://one-iptv.com/logoX/francetnt/M6.png" tvg-name="|FR| M6 HD"  group-title="FRANCE TNT",|FR| M6 HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/9260.ts
+#EXTINF:0, tvg-id="M6.fr" tvg-logo="http://one-iptv.com/logoX/francetnt/M6.png" tvg-name="|FR| M6 FULL HD"  group-title="FRANCE TNT",|FR| M6 FULL HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/9531.ts
+#EXTINF:0, tvg-id="France2.fr" tvg-logo="http://one-iptv.com/logoX/francetnt/France2.png" tvg-name="|FR| France 2 HD"  group-title="FRANCE TNT",|FR| France 2 HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/9277.ts
+#EXTINF:0, tvg-id="France3.fr" tvg-logo="http://one-iptv.com/logoX/francetnt/France3.png" tvg-name="|FR| France 3 HD"  group-title="FRANCE TNT",|FR| France 3 HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/9276.ts
+#EXTINF:0, tvg-id="France4.fr" tvg-logo="http://one-iptv.com/logoX/francetnt/France4.png" tvg-name="|FR| France 4  HD"  group-title="FRANCE TNT",|FR| France 4  HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/9274.ts
+#EXTINF:0, tvg-id="France5.fr" tvg-logo="http://one-iptv.com/logoX/francetnt/France5.png" tvg-name="|FR| France 5 HD"  group-title="FRANCE TNT",|FR| France 5 HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/9273.ts
+#EXTINF:0, tvg-id="FranceO.fr" tvg-logo="http://one-iptv.com/logoX/francetnt/FranceO.png" tvg-name="|FR| France O  HD"  group-title="FRANCE TNT",|FR| France O  HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/9272.ts
+#EXTINF:0, tvg-id="ParisPremiere.fr" tvg-logo="http://one-iptv.com/logoX/francetnt/parispremiere.png" tvg-name="|FR| PARIS PREMIERE HD"  group-title="FRANCE TNT",|FR| PARIS PREMIERE HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/9238.ts
+#EXTINF:0, tvg-id="TvBreizh.fr" tvg-logo="http://one-iptv.com/logoX/francetnt/TVBREIZ.png" tvg-name="|FR| TV BREIZH HD"  group-title="FRANCE TNT",|FR| TV BREIZH HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/9206.ts
+#EXTINF:0, tvg-id="6ter.fr" tvg-logo="http://one-iptv.com/logoX/francetnt/6TER.png" tvg-name="|FR| 6ter"  group-title="FRANCE TNT",|FR| 6ter
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/15216.ts
+#EXTINF:0, tvg-id="6ter.fr" tvg-logo="http://one-iptv.com/logoX/francetnt/6TER.png" tvg-name="|FR| 6TER HD"  group-title="FRANCE TNT",|FR| 6TER HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/9364.ts
+#EXTINF:0, tvg-id="ARTE.fr" tvg-logo="http://one-iptv.com/logoX/francetnt/arte.png" tvg-name="|FR| ARTE HD"  group-title="FRANCE TNT",|FR| ARTE HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/9354.ts
+#EXTINF:0, tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNat8R6Nd_MBh40Z-zYCKoRzGHNHfpA7mgAU3NesYh7jlcdV-neJRjKg" tvg-name="###### -- |FR|  DIVERTISSEMENT FRANCE  |FR| -- ######"  group-title="FRANCE DIVERTISSEMENT",###### -- |FR|  DIVERTISSEMENT FRANCE  |FR| -- ######
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/22438.ts
+#EXTINF:0, tvg-id="ComediePlus.fr" tvg-logo="http://one-iptv.com/logoX/francetnt/comedie.png" tvg-name="|FR| COMEDIE Plus HD"  group-title="FRANCE DIVERTISSEMENT",|FR| COMEDIE Plus HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/9297.ts
+#EXTINF:0, tvg-id="ElleGirl.fr" tvg-logo="http://one-iptv.com/logoX/francetnt/ellegirl.png" tvg-name="|FR| ELLE GIRL HD"  group-title="FRANCE DIVERTISSEMENT",|FR| ELLE GIRL HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/9284.ts
+#EXTINF:0, tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR88EpfXgjzl2hyj0f2S8p_Tvmb9Y4I6eivmYdHngdpeXWayhig0Os65Y" tvg-name="|FR| My Cuisine FullHD"  group-title="FRANCE DIVERTISSEMENT",|FR| My Cuisine FullHD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/30818.ts
+#EXTINF:0, tvg-id="TV5Monde.fr" tvg-logo="http://one-iptv.com/logoX/francetnt/tv5monde.png" tvg-name="|FR| TV5 MONDE"  group-title="FRANCE DIVERTISSEMENT",|FR| TV5 MONDE
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/9192.ts
+#EXTINF:0, tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFxSlvovH9rjXTsyn93kr_W3aycyUQxWGoa42-J7PbOVYDQwIHwOqhhB8" tvg-name="###### -- |BE| CHAINES BELGES |BE| -- ######"  group-title="CHAINES BELGES",###### -- |BE| CHAINES BELGES |BE| -- ######
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/22457.ts
+#EXTINF:0, tvg-id="" tvg-logo="http://one-iptv.com/logoX/chainesbelges/une.png" tvg-name="|BE| La Une Belgium"  group-title="CHAINES BELGES",|BE| La Une Belgium
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/17062.ts
+#EXTINF:0, tvg-id="" tvg-logo="http://one-iptv.com/logoX/chainesbelges/lestrois.png" tvg-name="|BE| La Trois Belgium"  group-title="CHAINES BELGES",|BE| La Trois Belgium
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/17063.ts
+#EXTINF:0, tvg-id="" tvg-logo="http://one-iptv.com/logoX/chainesbelges/ladeux.png" tvg-name="|BE| La Deux Belgium"  group-title="CHAINES BELGES",|BE| La Deux Belgium
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/17064.ts
+#EXTINF:0, tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7MDx5VVHhJqhp5IjtmbzAaBuoAvl8L5vgcrmRwukECqGYSdM996sCjZA" tvg-name="###### -- |SW| SWITZERLAND |SW| -- ######"  group-title="SWITZERLAND",###### -- |SW| SWITZERLAND |SW| -- ######
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/22490.ts
+#EXTINF:0, tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLrHdUJqquIm27hyG9MusO3gQN7mF4mtBNIWgR7pSAlLnuGLl9x_0g_rwe" tvg-name="|SW|* RTS 2 HD"  group-title="SWITZERLAND",|SW|* RTS 2 HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/20647.ts
+#EXTINF:0, tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGppn0X7ka96FtzSKxGUsCezH75ZGspk9qU351G-f0y521nr5uOgxDD5cJ" tvg-name="|SW|* RTS 1 HD"  group-title="SWITZERLAND",|SW|* RTS 1 HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/20648.ts
+#EXTINF:0, tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSM1xLTyiO2w8JT99cAUIJL9t08L8oxbx4TujuypN52qslmnIfDzw3AQ" tvg-name="|SW|* RSI La2 HD"  group-title="SWITZERLAND",|SW|* RSI La2 HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/20649.ts
+#EXTINF:0, tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8NffnBAo7Pnjo5JFmFzoR9OMLzOg2b3oedyjr2fXfn4LUUUGoqaju6Q96" tvg-name="|SW| RTS Un Local"  group-title="SWITZERLAND",|SW| RTS Un Local
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/20602.ts
+#EXTINF:0, tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTphFSwW-YSg0MnzwCBkYmX3UyNm6j3A1znRSspfOJaF6U9Ja7-EOP6aTC1" tvg-name="|SW| TV5 MONDE"  group-title="SWITZERLAND",|SW| TV5 MONDE
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/20588.ts
+#EXTINF:0, tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2_ATaHgyU1zys-A0rDLffvUtm5T_OANGebDAY-9sVzRFG72WW9tO74dE" tvg-name="|SW| RTS Deux Local"  group-title="SWITZERLAND",|SW| RTS Deux Local
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/20603.ts
+#EXTINF:0, tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSM1xLTyiO2w8JT99cAUIJL9t08L8oxbx4TujuypN52qslmnIfDzw3AQ" tvg-name="|SW|* RSI La1 HD"  group-title="SWITZERLAND",|SW|* RSI La1 HD
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/20650.ts
+#EXTINF:0, tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLaik7QRyqnuYOmSZJMy8fc9mHJZLlmm-43sh1PcJ3iaQZ39QC3qH0AGlY" tvg-name="###### -- |PT| PORTUGAL |PT| -- ######"  group-title="PORTUGAL",###### -- |PT| PORTUGAL |PT| -- ######
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/22504.ts
+#EXTINF:0, tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_36OFwO-hOjCYgA0j5IEQjub_Jn3xIclW6KwavdfKEiqnfmHQXKnK3k8" tvg-name="|PT  | ******** NACIONAIS ********"  group-title="PORTUGAL",|PT  | ******** NACIONAIS ********
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/31403.ts
+#EXTINF:0, tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA4AdBi3cTRS7y4L2dWj9OlQ_WVAzD82Q_z_CwM9fWzAyGvWfEA389prEV" tvg-name="|PT  | RTP"  group-title="PORTUGAL",|PT  | RTP
+http://pro.webvps.de:25443/live/JprMXE4kXc/W4opdOAxfA/31362.ts
 
