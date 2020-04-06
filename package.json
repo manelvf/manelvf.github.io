@@ -16,7 +16,9 @@
   },
   "scripts": {
     "build": "babel js/data.js js/game.js js/main.js -o dist/main.bundle.js --source-maps inline",
-    "dev": "http-server"
+    "watch": "babel js/data.js js/game.js js/main.js --watch -o dist/main.bundle.js --source-maps inline",
+    "dev": "npm run server | npm run watch",
+    "server": "http-server"
   },
   "author": "Manel Villar",
   "license": "ISC",

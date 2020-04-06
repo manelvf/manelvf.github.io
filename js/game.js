@@ -36,12 +36,12 @@ function Ball (ctx){
   this.ctx = ctx;
 }
 
-Ball.prototype.init = function() {
+Ball.prototype.init = function(radius) {
   this.dx = getRandomSign();
   this.dy = getRandomSign();
   this.x = getRandomWithLimit(0, App.availW);
   this.y = getRandomWithLimit(0, App.availH);
-  this.radius = 50;
+  this.radius = radius || App.ball_radius || 50;
 }
 
 Ball.prototype.draw = function() {
@@ -73,7 +73,8 @@ Ball.prototype.move = function() {
 
 var App = {
   balls: [],
-  n_of_balls: 5,
+  ball_radius: 35,
+  n_of_balls: 7,
   keypressed : [],
   keyListeners : [], // functions to listen for keys pressed
   availW: 0,
@@ -192,8 +193,9 @@ function checkMovements() {
   let balls = App.balls;
 
   for(let k=0; k<balls.length; k++) {
-    if (checkPositions(hero, balls[k]))
+    if (checkPositions(hero, balls[k])) {
       hero.init();
+    }
     if (checkPositions(balls[k], balls[(k+1)%balls.length])) {
       balls[k].dx *= -1;
       balls[k].dy *= -1;
@@ -242,16 +244,25 @@ function init() {
 
   App.availW = winW;
   App.availH = winH;
+  App.frame = frame;
 
 
   if (frame.getContext) {
     App.ctx = frame.getContext("2d");
     App.ctx.font = "20pt Arial";
 
-    for (let k=0; k<App.n_of_balls; k++) {
+    let i = 0;
+    while(i < App.n_of_balls) {
       let b = new Ball(App.ctx);
       b.init();
+
+      let collisions = App.balls.filter((ball) => checkPositions(b, ball))
+      if (collisions.length) {
+        continue
+      }
+
       App.balls.push(b);
+      i++
     }
 
     hero.init();
@@ -262,11 +273,34 @@ function init() {
     window.onkeyup= function(e) {
       App.keypressed[e.which] = false;
     }
-    // setInterval(function() { draw(ctx); }, 1000/30);
+
+    App.frame.addEventListener("touchstart", handleTouchStart, false)
+    App.frame.addEventListener("touchend", handleTouchEnd, false)
+
     window.requestAnimationFrame(draw);
     setInterval(checkMovements,1000/30);
     setInterval(doMovements,1000/30);
   } 
+
+  function handleTouchStart(evt) {
+    evt.preventDefault();
+    console.log("touchstart.");
+    var touches = evt.changedTouches;
+          
+    for (var i = 0; i < touches.length; i++) {
+      console.log("touchstart:" + i + "..." + touches[i]);
+      console.log("touchstart:" + i + ".");
+    }
+  }
+
+  function handleTouchEnd(evt) {
+    evt.preventDefault();
+    var touches = evt.changedTouches;
+  
+    for (var i = 0; i < touches.length; i++) {
+      console.log(touches[i])
+    }
+  }
 
 }
 
