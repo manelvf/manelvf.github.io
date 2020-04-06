@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# change the url for your equivalent on test
-#
-
-URL="http://localhost/manelvf"
-
-phantomjs --web-security=no /test/test.phantom.js "$URL"

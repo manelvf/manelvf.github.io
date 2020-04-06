@@ -15,16 +15,13 @@
     "babel-preset-minify": "^0.2.0"
   },
   "scripts": {
-    "build": "babel js/data.js js/game.js js/main.js -o build/main.bundle.js --source-maps inline"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/manelvf/manelvf.github.io.git"
+    "build": "babel js/data.js js/game.js js/main.js -o dist/main.bundle.js --source-maps inline",
+    "dev": "http-server"
   },
   "author": "Manel Villar",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/manelvf/manelvf.github.io/issues"
   },
-  "homepage": "https://github.com/manelvf/manelvf.github.io#readme"
+  "homepage": "https://manel.pro"
 }
