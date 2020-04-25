@@ -168,7 +168,7 @@ function draw() {
     ctx.fillText(zeropad(hero.points,8), App.availW * (2/3), 40);
     ctx.fillStyle = "rgba(100, 100, 255, 0.6)";
     ctx.fillText("Use the Arrow Keys to SURVIVE!",
-        App.availW * (1/3),
+        App.availW * (3/7),
         App.availH * (2/3));
 
     ctx.restore();

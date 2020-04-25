@@ -22,7 +22,7 @@ var Data = {
 	<p>You might be interested in checking my technical blog: <a href="https://manelvf.github.io/blog">The Fallen Apples</a>.
 	</p>
 	<p>Some experiments:
-      <ul class="square"> <li><a href="https://github.com/manelvf/Transboard">Transboard</a>: Collaborative tool for application file translations. It's goal it's to provide a way to organize translation work when multiple translatores are collaborating on the same project. Currently <a href="http://transboard.manelvf.com">in production</a>. [Ruby/Sinatra]</li>
+      <ul class="square"> <li><a href="https://github.com/manelvf/Transboard">Transboard</a>: Collaborative tool for application file translations. It's goal it's to provide a way to organize translation work when multiple translatores are collaborating on the same project. [Ruby/Sinatra]</li>
         <li><a href="https://github.com/manelvf/forestal2">Forestal</a>: this application was developed as part of a timber delivery company chain of tools. It's main goal is goods tracking. [Python/Django] </li>
 			</ul>
 
