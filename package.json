@@ -9,7 +9,7 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.0",
-    "http-server": "^0.12.1"
+    "http-server": "^0.12.3"
   },
   "devDependencies": {
     "babel-preset-minify": "^0.2.0"
@@ -25,5 +25,5 @@
   "bugs": {
     "url": "https://github.com/manelvf/manelvf.github.io/issues"
   },
-  "homepage": "https://manel.pro"
+  "homepage": "https://www.manel.pro"
 }
