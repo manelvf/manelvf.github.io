@@ -1,0 +1,11 @@
+---
+title: 
+permalink: false
+---
+<p>Hi, I'm Manel Vilar and I blog mostly about software development and sometimes about hardware. Check the list of header links for more information.</p>
+
+<ul>
+{{#each articles}}
+  <li><a href="posts/{{ toISOString this.date }}{{formatTitle this.title}}">[{{ toISOString date }}] - {{ title }}</a></li>
+{{/each}}
+</ul>

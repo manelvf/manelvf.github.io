@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdn.muicss.com/mui-0.10.2/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.2/js/mui.min.js"></script>
+    <link href="/dist/blog.css" rel="stylesheet" type="text/css" />
+
+    <title>Manel Villar blog -  Making an internet radio with a Banana Pi and cheaper components</title>
+
+  </head>
+
+  <body>
+    <!-- Tutorial HTML goes here -->
+	<div id="sidebar" style="display:none">
+	  <div class="mui--text-light mui--text-display1 mui--align-vertical"><a href="/blog">Manel Vilar's Blog</a></div>
+      <div id="sidedrawer">
+          <ul>
+              <li><strong><a href="/">- Home page</a></strong></li>
+              <li><strong><a href="https://medium.com/@fallenapples">- Medium articles</a></strong></li>
+              <li><strong><a href="https://github.com/manelvf">- Github</a></strong></li>
+              <li><strong><a href="mailto:eu@manel.pro">- Contact</a></strong></li>
+              <li><strong><a href="/blog/rss.xml">- RSS</a></strong></li>
+
+	      <li>
+<!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup" style="background-color: #00A896">
+<form action="https://manel.us8.list-manage.com/subscribe/post?u=99a3f462ec3efaae64ea213a8&amp;id=65601ca838" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<h2>Subscribe</h2>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_99a3f462ec3efaae64ea213a8_65601ca838" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+
+</li>
+
+          </ul>
+      </div>
+	</div>
+
+<div class="mui-row">
+  <div class="mui-col-sm-10 mui-col-sm-offset-1">
+    <br>
+    <br>
+	<div id="content" class="mui-container-fluid">
+
+    <div>
+        <h1>Manel.pro blog</h1>
+    </div>
+
+    <div class="mui-container-fluid">
+      <ul id="linkbar">
+          <li><strong><a href="/">Home page</a></strong></li>
+          <li><strong><a href="/blog">This Blog</a></strong></li>
+          <li><strong><a href="//medium.com/@fallenapples">Medium articles</a></strong></li>
+          <li><strong><a href="//github.com/manelvf">Github</a></strong></li>
+          <li><strong><a href="mailto:eu@manel.pro">Contact</a></strong></li>
+          <li><strong><a href="/blog/rss.xml">RSS</a></strong></li>
+      </ul>
+    </div>
+
+
+        <div class="mui--text-headline title"> Making an internet radio with a Banana Pi and cheaper components</div>
+			<div class="mui"> 2015-11-11</div>
+		<br />
+		<br />
+        <div id="contents">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This guide pretends to list all the steps I used to create a radio able to play different internet radio stations. Most of the work here is borrowed from different sources, this guide is simply a step-by-step compilation with links to the original information.</p>
+</div>
+<div class="paragraph">
+<p>Yes, I&#8217;m a proud owner of Banana PI, which is the chinese version of the Raspberry Pi. I also own two Raspeberry Pis, models B and 2B, so no discrimination for having a different origin in this case. Bananas are based on Android hardware, with the AllWinner processors at this heart, A20 in the case of the Banana Pi.</p>
+</div>
+<div class="paragraph">
+<p>Despite the specifications are usually superior to the Raspberries, lack of community and open documentation makes the Bananas to have less use cases. Things are changing a bit as at <a href="http://www.lemaker.org">LeMaker</a> they are doing a lot of effort in changing that matter. It&#8217;s going to take long until they improve the size and awesomeness of the Raspi community, anyway.</p>
+</div>
+<div class="paragraph">
+<p>One of these efforts is the creation of a Linux distribution, an equivalent to the original Raspian, called <strong>Bananian</strong>. For these guide I use that distribution, but it&#8217;s possible to use any other . Notice that Bananian has superuser as default user (sudo), so for all the commands a superuser is assumed.</p>
+</div>
+<div class="paragraph">
+<p>The main reason I used the Banana instead one of my Raspies is that sound quality is not so bad compared to the latter ones. A way to overcome that is to use some kind of <a href="https://www.hifiberry.com/digiplus/">Digital to Analog Converter (DAC)</a>. But for a discrete radio quality, we can use the default analog output.</p>
+</div>
+<div class="paragraph">
+<p>After reading a bunch of blog posts, using a USB sound card is discouraged as there are lot of latency issues. But you are free to try :)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ingredients">Ingredients</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Banana Pi or Banana Pi Pro.</p>
+</li>
+<li>
+<p>Cheap PC speakers with analog audio entry. Better powered by USB. The cheaper the better (just kidding).</p>
+</li>
+<li>
+<p>SD Card. Usually &gt; 4 Gb.</p>
+</li>
+<li>
+<p>Wifi dongle. Smaller is better, but has to work with your Banana. Notice that most of the time the only way to tell if an usb wifi dongle will work with your Banana is to buy from a trusted shop or simply buy it yourself.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_steps">Steps</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Setup the <a href="http://wiki.lemaker.org/BananaPro/Pi:WiFi_configuration">wifi</a>. You can use also an ethernet connection, but it&#8217;s less fun.</p>
+</li>
+<li>
+<p><a href="https://www.mopidy.com/">Mopidy</a> is a versatile frontend for the MDP (Music Player Daemon). For installing it: <a href="https://docs.mopidy.com/en/latest/installation/debian/" class="bare">https://docs.mopidy.com/en/latest/installation/debian/</a> The same guide allows to install it in almost any other major linux distro.</p>
+<div class="paragraph">
+<p>We need mopidy mostly for the provider plugins. The one I use more is TuneIn, but there are plugins for Spotify, SoundCloud&#8230;&#8203; It&#8217;s possible to save songs in the SD card or in a hard disk connected by SATA or USB.</p>
+</div>
+<div class="paragraph">
+<p>You can check that it&#8217;s correctly installed <code>mopidy</code> from command-line. Mopidy tries to start the MPD, so if it has already started, it will show an error. Not a problem.</p>
+</div>
+</li>
+<li>
+<p>We need to install a web frontend, as we want to access our radio from remote. I.e. from a mobile phone. The one I use is Mopidy-MusicBox-Webclient, but you can have a look to a lot of them in this <a href="http://mopidy.readthedocs.org/en/latest/ext/web/">list</a>.</p>
+</li>
+<li>
+<p>(Optional) As we need to test the sound, installing the alsa tools and execute the alsamixer utility can be interesting. Simply check that there are two sound cards: analog output and HDMI.</p>
+<div class="paragraph">
+<p><code>apt-get install alsa-tools</code></p>
+</div>
+<div class="paragraph">
+<p><code>alsamixer</code></p>
+</div>
+</li>
+<li>
+<p>As a default, HDMI sound output is enabled, so we have to toggle it for enabling the analog modifying the ALSA sound configuration file, <strong>/etc/asound.conf</strong> (<a href="http://forum.lemaker.org/thread-213-1-1-.html">source</a>).</p>
+<div class="listingblock">
+<div class="content">
+<pre>pcm.!default {
+    type hw
+    card 0
+    device 0
+}
+
+ctl.!default {
+    type hw
+    card 0
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then we can test the sound:</p>
+</div>
+<div class="paragraph">
+<p><code>speaker-test -twav -c2</code></p>
+</div>
+<div class="paragraph">
+<p>And if the speakers are properly connected, you should hear a nice sound from them. No, it&#8217;s not Britney Spears.</p>
+</div>
+</li>
+<li>
+<p>We need to <a href="https://docs.mopidy.com/en/develop/debian/#running-as-a-system-service-by-default">run it as a service</a> in order to have it running when the Banana boots.</p>
+</li>
+<li>
+<p>Banana PI has a network alias called "bananapi". So you could use a reverse proxy like Nginx to easily access the web interface. Unfortunately, IE disables WebSockets when a webpage is accessed from a local alias network. That disables the frontend. A quickfix is to use the IP address. You can use a Nokia screen to show the IP addresss (I know, that&#8217;s for another tutorial) or simply access from another computer and get the IP. If you don&#8217;t mess too much with your network and don&#8217;t reboot too often, chances are that you are going to get the same IP a lot of times.</p>
+<div class="paragraph">
+<p>If you want to access the web interface from a different host (and usually that&#8217;s the use case) you need to make the web server to broadcast the signal to the other devices in same network. For that we modify hostname entry in the configuration file in <strong>/etc/mopidy/mopidy.conf</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[http]
+hostname = 0.0.0.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There&#8217;s another configuration stored in a local folder, but it&#8217;s not used when we run mopidy as a sevice (previous step).</p>
+</div>
+<div class="paragraph">
+<p>So you now can safely access your brandly new internet radio visiting the url: <strong>http://&lt;Banana Pi IP&gt;:6680</strong></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There quite a few small things for building a system like this. It&#8217;s not too complex, but sometimes requires some patience as the information is dispersed in different blog and forum posts.</p>
+</div>
+<div class="paragraph">
+<p>So, feel free to use this as a reference, but also try different stuff and new configurations. Enjoy the music!</p>
+</div>
+</div>
+</div>
+        </div>
+	</div>
+  </div>
+</div>
+
+<footer>
+  <div class="mui-container mui--text-center">
+    Made with ♥ by <a href="https://www.manel.pro">Manel Vilar</a>
+  </div>
+
+
+</footer>
+  </body>
+</html>

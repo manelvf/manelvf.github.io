@@ -1,0 +1,29 @@
+= Using a Raspberry Pi for live TV streaming (IPTV)
+:published-at: 2017-09-24
+
+*UPDATED 07/04/2018*: Check the detailed guide at https://watchiptv.info/2018/07/04/iptv-on-raspberry-pi-for-live-tv-streaming-271855e666c1/ . Includes screenshots and more detailed information.
+
+One of the most common uses for a Raspberry PI is to use it as a Media Center. It comes very handy when you want to watch some videos or movies in a big screen and also it can serve as a very basic NAS. But another possibility is to *watch live TV* connecting to an *IPTV subscription service*. Those services offer you a list of channels that stream live TV, which are great for watching news and shows from other countries and sports events.
+
+== Now for the setup part 
+
+- Subscribe to an IPTV service. Check first that they have the channels you want to watch. They usually offer you way more than you need (usually > 2000 channels), but don't worry there are ways of filtering most of them. You will receive an _.m3u_ URL that lists the channels. We'll use it on the next steps.
+- Install in your PI a distribution that uses Kodi, like LibreElec. Any model should be good enough, as streaming video process is not as intensive as it seems, at least for not HD quality. Of course, you'll probably need a Pi3 for the best quality. You only need to be able to connect it to internet.
+- Install the IPTV add-on. It usually can be found in the default list of *PVR* clients in the list of add-ons, otherwise you will have to search for it. I use the *Simple IPTV PVR Client* one. Instructions for installation change from one version to other, so you'll usually will need to fight a bit with the menus.
+- Now configure the addon with the url you have received in the previous steps. Here you have the option of using a remote file, a local one or cache the remote one. Tip: using a custom remote one can save you hassle when editing the channels used.
+- You will need to restart Kodi (or reboot your Pi). Then the list of channels will be loaded and a new option will appear on the menu: *TV*. You can use your remote control for switching channels when connecting the Pi to the usual TV screen.
+
+== M3U files gotchas
+
+So *m3u* list files, way common in the early 2000s when the MP3 revolution happened, are still very useful for handling media lists. Still, almost nobody uses a strict specification, so there can be problems with the format of the file you receive from the subscriber. In those cases, you might want to use an M3U editor, even if you only need to write again the file. I have found the offline ones the more handy ones. They are also useful for removing all those unwanted channels that pollute the list.
+
+As I want to control the channels from a remote place, I put the channels I want to watch in a Github *Gist* (use the _raw_ option), that serves as a casual hosting for it (but perfectly working, btw). It would probably work using other services like Pastebin changing the extension of name. Dropbox will not work for hosting the .m3u file as is an unsupported filetype in their hosting option. A http://i.gal[url shortener] could be useful if you find the Gist URL too long.
+
+Another tip: as Kodi can be installed also in a PC, and in a variety of devices, you can always test the configuration in other computer, in case you don't have a keyboard available.
+
+== Conclusion
+
+Watching TV is not as trendy as it used to be, givin the rise of YouTube, etc.. Still useful for watching live events like sports and concerts.
+
+Enjoy!
+

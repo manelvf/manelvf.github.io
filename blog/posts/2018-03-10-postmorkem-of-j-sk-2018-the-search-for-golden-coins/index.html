@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdn.muicss.com/mui-0.10.2/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.2/js/mui.min.js"></script>
+    <link href="/dist/blog.css" rel="stylesheet" type="text/css" />
+
+    <title>Manel Villar blog -  Postmorkem of J SK 2018 The Search for Golden Coins</title>
+
+  </head>
+
+  <body>
+    <!-- Tutorial HTML goes here -->
+	<div id="sidebar" style="display:none">
+	  <div class="mui--text-light mui--text-display1 mui--align-vertical"><a href="/blog">Manel Vilar's Blog</a></div>
+      <div id="sidedrawer">
+          <ul>
+              <li><strong><a href="/">- Home page</a></strong></li>
+              <li><strong><a href="https://medium.com/@fallenapples">- Medium articles</a></strong></li>
+              <li><strong><a href="https://github.com/manelvf">- Github</a></strong></li>
+              <li><strong><a href="mailto:eu@manel.pro">- Contact</a></strong></li>
+              <li><strong><a href="/blog/rss.xml">- RSS</a></strong></li>
+
+	      <li>
+<!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup" style="background-color: #00A896">
+<form action="https://manel.us8.list-manage.com/subscribe/post?u=99a3f462ec3efaae64ea213a8&amp;id=65601ca838" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<h2>Subscribe</h2>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_99a3f462ec3efaae64ea213a8_65601ca838" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+
+</li>
+
+          </ul>
+      </div>
+	</div>
+
+<div class="mui-row">
+  <div class="mui-col-sm-10 mui-col-sm-offset-1">
+    <br>
+    <br>
+	<div id="content" class="mui-container-fluid">
+
+    <div>
+        <h1>Manel.pro blog</h1>
+    </div>
+
+    <div class="mui-container-fluid">
+      <ul id="linkbar">
+          <li><strong><a href="/">Home page</a></strong></li>
+          <li><strong><a href="/blog">This Blog</a></strong></li>
+          <li><strong><a href="//medium.com/@fallenapples">Medium articles</a></strong></li>
+          <li><strong><a href="//github.com/manelvf">Github</a></strong></li>
+          <li><strong><a href="mailto:eu@manel.pro">Contact</a></strong></li>
+          <li><strong><a href="/blog/rss.xml">RSS</a></strong></li>
+      </ul>
+    </div>
+
+
+        <div class="mui--text-headline title"> Postmorkem of J SK 2018 The Search for Golden Coins</div>
+			<div class="mui"> 2018-03-10</div>
+		<br />
+		<br />
+        <div id="contents">
+            <div class="paragraph">
+<p>As some of you already know, <strong>JS1K</strong> is my favourite code golfing competition. In fact is the only one I have attended in latest years. To create something quickly in only 1024 is both a challenge and a lot of fun. This year 2018, theme was "The volatile Coin Mine", so I decided create my own mine that you can find here:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://js1k.com/2018-coins/demo/3186" class="bare">https://js1k.com/2018-coins/demo/3186</a></p>
+</div>
+<div class="paragraph">
+<p>You can browse the source code too in the link, and I will post it in this website.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s the classical canvas demo and it doesn&#8217;t have any major technical accomplisment, but I&#8217;m gonna disect it. Let&#8217;s start for the way the mine is generated:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">var mine = [];
+for (let i=0; i &lt; ROWS; i++){
+  let cells = parseInt(Math.random() * (ROWS - 1)) + 1;
+
+  let line = [];
+  for (let j=0; j &lt; cells; j++) {
+    line.push(!parseInt(Math.random() * 5));
+  }
+  mine.push([cells, line]);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <em>mine</em> is a list of cells that is composed using a nested loop, with a bit of randomness. I use a tuple for storing the both the length of the row and an array marking the cells that will have a coin (true if they have, false otherwise).</p>
+</div>
+<div class="paragraph">
+<p>Now the interesting part starts:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">var id = c.createImageData(8, 8);
+var data = id.data;
+for (let i = 0; i &lt; data.length; i += 4) {
+  let mcolor = parseInt(Math.random() * 256);
+  data[i] = mcolor;
+  data[i+1] = parseInt(mcolor/2);
+  data[i+2] = 0;
+  data[i+3] = 255;
+}
+
+createImageBitmap(id).then(function(bi) {
+  pt = c.createPattern(bi, "repeat");
+  window.requestAnimationFrame(function(){
+    render(pt);
+  });
+});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>I wanted to create a pattern for the mine tiles background, and for that, three native methods are called:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>createImageData: creates an array with the given dimensions (8, 8) size, that can be accessed and modified. I use a variation of the brown color for the palette, handled by the <em>mcolor</em> variable.</p>
+</li>
+<li>
+<p>createImageBitmap: with the data array created in the previous step, an image bitmap that can be used to draw in the canvas object. The tricky part: the method returns a promise, which breaks the linearity of the execution and forced to call the main render method in the promise callback. Another option would be to check in the code if the Bitmap was created and render it conditionally, but for the demo I chose the callback approach.</p>
+</li>
+<li>
+<p>createPattern: once the bitmap is created, we define a pattern that repeats itself for been used when filling canvas figures.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For rendering everything I use another nested loop. A common technique for these kind of demos is to use only a single loop and compute everything on it. Let&#8217;s have a look to it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">function drawMine(pt) {
+  for (let i=0; i&lt;mine.length; i++) {
+    for (let j=0; j&lt;mine[i][0]; j++) {
+      let x = (ROWS/2) - parseInt(mine[i][0]/2) + j;
+      drawTile(x, i, pt);
+
+      // clean the coin where the dude is
+      if (i == uy &amp;&amp; x == ux) {
+         if (mine[i][1][j])  {
+           mine[i][1][j] = 0;
+           coins += 1;
+         };
+      }
+
+      if (mine[i][1][j]) {
+        drawCoin(x, i);
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This formula centers the tiles, so rows can have a different lenght but they still are connected:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>let x = (ROWS/2) - parseInt(mine[i][0]/2) + j;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Starting in the center (<strong>ROWS/2</strong>), I substract half of the row lenght (<strong>mine[i][0]/2</strong>) and add the iterator <strong>j</strong>, which is the cell index.</p>
+</div>
+<div class="paragraph">
+<p>For drawing the coin, I used one ellipse and a half. Drawing the <em>hero</em> was easier, as I only used another rect. How to draw complex figures using Canvas primitives would be a subject for another post, but outside demos, has very little interest. You can use SVG and have much better tooling (Inkscape, etc&#8230;&#8203;)</p>
+</div>
+<div class="paragraph">
+<p>At the end, there&#8217;s an event listener that uses the arrow keys for modifying the rendering parameters so the main character can move. What is missing is some collision detection method so that character couldn&#8217;t move outside of the limits of the mine. But there are still around 100 bytes to reach the limit, so it would be possible to implement;)</p>
+</div>
+<div class="paragraph">
+<p>Also in order to save some bytes, it&#8217;s possible to wrap all the calls to <em>Math.random</em> of the whole script in a single method to keep saving space. Probably using arrow methods also helps. There are quite a few handy tricks in order to be able to add more stuff with minimal penalty.</p>
+</div>
+<div class="paragraph">
+<p>As you can see, it&#8217;s really easy to do very simple demo using very few lines of code. And also it&#8217;s a nice way of learning new things like <em>semi-obscure</em> standard JS methods that otherwise you wouldn&#8217;t have a chance to use in daily development.</p>
+</div>
+<div class="paragraph">
+<p>Happy codin'!</p>
+</div>
+        </div>
+	</div>
+  </div>
+</div>
+
+<footer>
+  <div class="mui-container mui--text-center">
+    Made with ♥ by <a href="https://www.manel.pro">Manel Vilar</a>
+  </div>
+
+
+</footer>
+  </body>
+</html>

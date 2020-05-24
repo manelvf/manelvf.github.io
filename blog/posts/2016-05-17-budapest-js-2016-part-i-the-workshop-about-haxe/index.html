@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdn.muicss.com/mui-0.10.2/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.2/js/mui.min.js"></script>
+    <link href="/dist/blog.css" rel="stylesheet" type="text/css" />
+
+    <title>Manel Villar blog -  Budapest JS 2016 Part I the workshop about Haxe</title>
+
+  </head>
+
+  <body>
+    <!-- Tutorial HTML goes here -->
+	<div id="sidebar" style="display:none">
+	  <div class="mui--text-light mui--text-display1 mui--align-vertical"><a href="/blog">Manel Vilar's Blog</a></div>
+      <div id="sidedrawer">
+          <ul>
+              <li><strong><a href="/">- Home page</a></strong></li>
+              <li><strong><a href="https://medium.com/@fallenapples">- Medium articles</a></strong></li>
+              <li><strong><a href="https://github.com/manelvf">- Github</a></strong></li>
+              <li><strong><a href="mailto:eu@manel.pro">- Contact</a></strong></li>
+              <li><strong><a href="/blog/rss.xml">- RSS</a></strong></li>
+
+	      <li>
+<!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup" style="background-color: #00A896">
+<form action="https://manel.us8.list-manage.com/subscribe/post?u=99a3f462ec3efaae64ea213a8&amp;id=65601ca838" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<h2>Subscribe</h2>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_99a3f462ec3efaae64ea213a8_65601ca838" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+
+</li>
+
+          </ul>
+      </div>
+	</div>
+
+<div class="mui-row">
+  <div class="mui-col-sm-10 mui-col-sm-offset-1">
+    <br>
+    <br>
+	<div id="content" class="mui-container-fluid">
+
+    <div>
+        <h1>Manel.pro blog</h1>
+    </div>
+
+    <div class="mui-container-fluid">
+      <ul id="linkbar">
+          <li><strong><a href="/">Home page</a></strong></li>
+          <li><strong><a href="/blog">This Blog</a></strong></li>
+          <li><strong><a href="//medium.com/@fallenapples">Medium articles</a></strong></li>
+          <li><strong><a href="//github.com/manelvf">Github</a></strong></li>
+          <li><strong><a href="mailto:eu@manel.pro">Contact</a></strong></li>
+          <li><strong><a href="/blog/rss.xml">RSS</a></strong></li>
+      </ul>
+    </div>
+
+
+        <div class="mui--text-headline title"> Budapest JS 2016 Part I the workshop about Haxe</div>
+			<div class="mui"> 2016-05-17</div>
+		<br />
+		<br />
+        <div id="contents">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>I attended for first time the JS conference celebrated in the capital city of Hungary. In this post I want to share a few notes from my experience there, first from the workshop, then from the talks per se.</p>
+</div>
+<div class="paragraph">
+<p>The title of the workshop I did was:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_developing_applications_using_the_haxe_language">Developing applications using the Haxe language</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I planned to go to a hardware related workshop, but I had to attend the one related to the <a href="http://haxe.org/">Haxe Language</a> in a company that really uses it for production. It was very interesting as it seems the true inheritor of <strong>Flash</strong>, and is somehow used in the adult content industry. Yes, you have read the last sentence correctly. They were also recruiting, btw.</p>
+</div>
+<div class="paragraph">
+<p>The Haxe language is very interesting for several reasons: it has survived for more than ten years in the industry (wow!), is able to target several platforms and it has evolved slowly but steadily in its lifetime. For people who doesn&#8217;t know the language, it is a strongly typed language with C syntax, much on the Java/Go way. It uses a classical object oriented scheme and has its own standard library, that is very complete. I would say it&#8217;s really a transpiler, before CoffeeScript started the trend in the JS world. It doesn&#8217;t have its own VM, so it&#8217;s not tied to any platform. It targets several platforms, from PHP to Javascript and Python, in different OS, and does it in a clean way. This approach makes you think a lot about languages being only gateways to their underlying platforms, something that we usually forget when we developers decide the tools we are going to use for a new project or problem.</p>
+</div>
+<div class="paragraph">
+<p>I knew the language from a few games that where ported to Android and web a few years ago, and back then I remember I was very surprised with the solidity of the products, in contrast with all the glitches and problems of first HTML5 games of those years. The small job market disregarded the language for many people that looked for a better chance of finding a job in the industry, but it seems that many freelancers took serious advantage of it.</p>
+</div>
+<div class="paragraph">
+<p>The guys doing the workshop/conference were really patient doing the explanations, as the attendance were mostly eskeptical. They had a lot of experience and they were interested in looking for a tool that solved the problem of long-time application maintenance. As they were not satisfied with Javascript, they tried the very promising Typescript language. And it seems the Microsoft language still has a lot of drawbacks when dealing with transpiling to real JS. They needed something better, so they tried Haxe and  fell in love inmediately with it as things were really smooth from the very first moment.</p>
+</div>
+<div class="paragraph">
+<p>A counterpoint to this approach is that Javascript itself has it&#8217;s own standard, ECMAScript, that is in very good health even after years of discussions and fights over corporate interests. So in these days, makes sense to use Javascript for everything and disregard other options. In any case, the Haxe compilation to Javascript is not very arcane, so it would be possible to reuse the compiled code is someone that uses the old platform decides to disregard it.</p>
+</div>
+<div class="paragraph">
+<p>Haxe has been there since 2004, and since them there have been a lot of trends. From the absolute kingdom of Flash for web games and presentations, to the rise of Javascript with Ajax, the fall of Java in web and the declining of PHP. As Haxe is an independent language, driven by its own independent foundation and not a big corporation, like Python, that makes people more confident on its future, as is less probable that their maintainers simply drop it. In this industry, even successful languages like Java, have to struggle with their corporate owners. It&#8217;s worth to mention that contributions are welcome.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_organization">Organization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The organizers should improve the workshops assignation, as people should be able to choose them. A lot of people were interested in the hardware related stuff, it seems the hot stuff right now. The angular2 was also very popular, as a lot of people will need to migrate their apps to the new version. As the version 2 uses Typescript, the controversy has already arisen.</p>
+</div>
+<div class="paragraph">
+<p>Anyway, the workshops were included in the conference price, so it was a good deal. Kudos for the organizers, as not all the confs have this kind of bonus.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_city">The city</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On a side related note, the city is really interesting, with lots of history and nigthlife. And many dark sides. Worths a visit without any doubt.</p>
+</div>
+<div class="paragraph">
+<p>See you for the second part, about the talks themselves.</p>
+</div>
+</div>
+</div>
+        </div>
+	</div>
+  </div>
+</div>
+
+<footer>
+  <div class="mui-container mui--text-center">
+    Made with ♥ by <a href="https://www.manel.pro">Manel Vilar</a>
+  </div>
+
+
+</footer>
+  </body>
+</html>

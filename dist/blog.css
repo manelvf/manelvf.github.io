@@ -1,0 +1,96 @@
+/**
+ * Body CSS
+ */
+html,
+body {
+  height: 100%;
+}
+
+html,
+body,
+input,
+textarea,
+button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  background-color: #264653;
+  color: #F0F3BD;
+}
+
+a {
+  color: #E9C46A;
+}
+
+
+/**
+ * Sidebar CSS
+ */
+#sidebar {
+  background-color: #028090;
+  padding: 15px;
+}
+
+@media (min-width: 768px) {
+  #sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 180px;
+    height: 100%;
+    padding-top: 30px;
+  }
+}
+
+/**
+ * Content CSS
+ */
+@media (min-width: 768px) {
+  #content {
+      margin: 0 auto;
+      display: table;
+  }
+}
+
+#contents p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80ch;
+  font-size: 1.2em;
+  line-height: 1.8em;
+}
+
+#contents ul {
+  list-style-type: square;
+}
+
+#contents ul li {
+  margin: 1em;
+}
+
+#contents div h1,h2 {
+  color: #E9C46A;
+}
+
+.title {
+  color: #E9C46A;
+}
+
+
+/**
+ * Footer CSS
+ */
+footer {
+  box-sizing: border-box;
+  height: 100px;
+  padding-top: 35px;
+}
+
+ul#linkbar {
+    display:flex;
+}
+
+ul#linkbar li {
+    margin-left: 5ch;
+}
+

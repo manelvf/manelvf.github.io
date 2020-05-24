@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdn.muicss.com/mui-0.10.2/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.2/js/mui.min.js"></script>
+    <link href="/dist/blog.css" rel="stylesheet" type="text/css" />
+
+    <title>Manel Villar blog -  Migrating to Metalsmith</title>
+
+  </head>
+
+  <body>
+    <!-- Tutorial HTML goes here -->
+	<div id="sidebar" style="display:none">
+	  <div class="mui--text-light mui--text-display1 mui--align-vertical"><a href="/blog">Manel Vilar's Blog</a></div>
+      <div id="sidedrawer">
+          <ul>
+              <li><strong><a href="/">- Home page</a></strong></li>
+              <li><strong><a href="https://medium.com/@fallenapples">- Medium articles</a></strong></li>
+              <li><strong><a href="https://github.com/manelvf">- Github</a></strong></li>
+              <li><strong><a href="mailto:eu@manel.pro">- Contact</a></strong></li>
+              <li><strong><a href="/blog/rss.xml">- RSS</a></strong></li>
+
+	      <li>
+<!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup" style="background-color: #00A896">
+<form action="https://manel.us8.list-manage.com/subscribe/post?u=99a3f462ec3efaae64ea213a8&amp;id=65601ca838" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<h2>Subscribe</h2>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_99a3f462ec3efaae64ea213a8_65601ca838" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+
+</li>
+
+          </ul>
+      </div>
+	</div>
+
+<div class="mui-row">
+  <div class="mui-col-sm-10 mui-col-sm-offset-1">
+    <br>
+    <br>
+	<div id="content" class="mui-container-fluid">
+
+    <div>
+        <h1>Manel.pro blog</h1>
+    </div>
+
+    <div class="mui-container-fluid">
+      <ul id="linkbar">
+          <li><strong><a href="/">Home page</a></strong></li>
+          <li><strong><a href="/blog">This Blog</a></strong></li>
+          <li><strong><a href="//medium.com/@fallenapples">Medium articles</a></strong></li>
+          <li><strong><a href="//github.com/manelvf">Github</a></strong></li>
+          <li><strong><a href="mailto:eu@manel.pro">Contact</a></strong></li>
+          <li><strong><a href="/blog/rss.xml">RSS</a></strong></li>
+      </ul>
+    </div>
+
+
+        <div class="mui--text-headline title"> Migrating to Metalsmith</div>
+			<div class="mui"> 2020-05-02</div>
+		<br />
+		<br />
+        <div id="contents">
+            <p>Hi, again.</p>
+
+<p>It has been a while since my last post, but I think now is the perfect timing for resuming my blogging. There are quite a few news, apart from a global pandemy,but the most important one right now is that I decided to migrate my blog to this new eye-bleeding format.</p>
+
+<h2>Old static generator went deprecated</h2>
+
+<p>As <a href="https://hubpress.github.io">Hubpress project</a> is no longer mantained, I decided to migrate to <a href="https://metalsmith.io">Metalsmith</a> for a few reasons. The most important, is the easyest one I found, as it uses a nice chained methods pattern that allows you to add your own plugins. Even is not as popular as Jekyll or Gatsby, it&#39;s still very broadly used. And worst case, I can migrate again, which I hope I don&#39;t need in another 5 years.</p>
+
+<p>I chose Hubpress five years ago as something interemediate between the old CMS-way (like Wordpress) and the &quot;new&quot; static way of building websites. It&#39;s lifecycle has ended. It&#39;s probably the blogging system I have used more, so it wasn&#39;t so bad. It had to main problems: it used React and it was coupled to Github. I wanted to remove those two dependencies with the new system.</p>
+
+<h2>The migration</h2>
+
+<p>When choosing a static website generator, most people opt for the widely used Jekyll or Gatsby, which has a company behind. Both are good options, as there are others interesting too, like Hugo. But I wanted something simple that I could fully control and understand. I chose Metalsmith as it&#39;s made for being essentially simple, uses Javascript, so it&#39;s ubiquitous and doesn&#39;t need a fancy frontend renderer for it. It seems that is not so popular (you can check the StaticGen website for it), but it seems to have more that one maintainer and does what you wnt from it, which is essentially expanding templates in text files. Something really simple that can become really complex.</p>
+
+<p>Most of the content was already there, I only had to add support for both old (asciidoc) and new posts (markdown) and adding a few plugins (feed generator, collections and a few minor stuff). The only tricky part is retrieving metadata from the filename, as I wanted to keep the old convention, which comes from Jekyll and it&#39;s widely adopted for static generated blogs: &lt;date&gt;-&lt;blog post title&gt;.&lt;format&gt;.</p>
+
+<p>As everything in <em>Metalsmith</em> is a plugin, I found the permalinks one very compelling and easy to use. Be careful with upper-case paths, as they are usually recognized by the local server but not for a production web server. Check also te output folder: don&#39;t use the root folder as output in conjuncton wth the clear command, or it will erase entirely your local folder. Overall, remember to commit everything to versin control, apart rom dependencies, etc... I commit the outputoo, as Github Pages only supports buils for Jekyll. There are more evolved systems such as Netifly or Surge with better support, and being static, it&#39;s easy to switch to one of them. I hope we have more static hosting options inthe future.</p>
+
+<p>Furthermore, I added some layout template with some styling. I am not satisfyed, so I will go back to that in the future, even now is probably good enough. Another new addition, a subscription box courtesy of Mailchimp, in case some of you want to receive updates by email.</p>
+
+<p>It took me longer than expected to migrate to the new system, but I&#39;m satisfyed with the new system, as I feel that I understand every single step and I can mess with it when I need to. Sometimes maintainability is not about having long-term duration components, but about being able to easily replace those components when it&#39;s required, or necessary.</p>
+
+<h2>New domain</h2>
+
+<p>I decided to use this <a href="https://manel.pro">Manel.pro</a> domain, which started as a joke, but as big corporations are becoming evil and evil, I think it&#39;s worth enough keep using it. I regret a bit discarding my old manelvf.com, but this sounds better. Blog contents are still hosted in Github, but eventually can be moved to any hosting. That is one of the best things about static generators.</p>
+
+<p>I will keep blogging from time to time here, and probably I will add Galician and Spanish content, not necessarily technical.</p>
+        </div>
+	</div>
+  </div>
+</div>
+
+<footer>
+  <div class="mui-container mui--text-center">
+    Made with ♥ by <a href="https://www.manel.pro">Manel Vilar</a>
+  </div>
+
+
+</footer>
+  </body>
+</html>

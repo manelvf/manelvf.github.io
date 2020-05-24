@@ -1,0 +1,59 @@
+// = Your Blog title
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+// :hp-tags: HubPress, Blog, Open_Source,
+// :hp-alt-title: My English Title
+:published_at: 2017-12-31
+= Discourse as a killer community discussion software
+
+Discourse is a web discussion forum that I've been using for a few communities, being http://bl.ockchain.net[bl.ockchain.net] the last one. I chose it and I use it with preference for some especific reasons that I'll explain at the end of the article, but talking about it it's also a good excuse for providing a little history of internet discussion forums. 
+
+Let's begin.
+
+== The early days
+
+Before the invention of World Wide Web, there were some other internet services, apart from email. One of those, widely used supporting online discussions, was https://en.wikipedia.org/wiki/Usenet[USENET]. It was a very primitive way of threading discussions and, as matter of fact, was a distributed network, much in the spirit of the archaic internet.
+
+Usenet is still used, but mostly with alternate uses, like _sharing_ copyrighted material. Sometimes it's incredible what internet services can be transformed into. 
+
+Then, in 1991, the web appears and some clever guys figure out quickly how to execute code on the servers that provide the static documents and the dynamic web era was born. Javascript was still a toy but the hability of modify those static documents was already present and discussions, positive contributions and horrible remarks flourished. Services like USENET were no longer so popular or even needed anymore because the web was everything.
+
+== The PHP era
+
+Perl scripts, using the *cgi-bin* standard were the kings of the 90s, but in 2000s era, PHP-based forums were the kings, or queens, not with a lot of problems. But solutions like vBulletin and phpBB were massively adopted and they settled a lot of standards for good/bad practices both in community handling and code style.
+
+It was an age of wonders, but also an era of dangers. As anybody could create it's own forum in very few lines of PHP, or simply install any script in a web server, security could be easily compromised, and credentials easily stolen. Also, anybody could rule their own community, which means also setting their own moderation standards. Controversities arised more often. SPAM is also a common issue, a very difficult one to solve btw.
+
+Is in this era when some reward mechanisms for active users start to appear, mostly as experimental _points_ or _karma_. They also worked as a way of engaging user in keep contributing to the community.
+
+== Discourse: a modern (trendy?) approach
+
+After mid 2010s, new possibilities for web development appear as the reliance from the Apache web server that powered all PHP software disappeared. A combination of cheap VPS solutions and new alternatives to traditional webservers like the reverse proxy Nginx, along with the popularization of Linux containers (_docker_ and similar tools), made possible to start using new technologies.
+
+In some ways, this era is only a minimal an evolution of the previous one. Most of the features that new software offers were already present in PHP software. In fact, it's possible to combine the old forum stack (Linux+PHP+MySQL) with containers and virtualization. But we are not tied anymore to that classic stack.
+
+What makes a new platform like https://www.discourse.org/[Discourse] to shine is a combination of different small improvements:
+
+- It's developed in Ruby on Rails. This is both a pro and a con, but Ruby is a beautiful language and writing plugins is a joy with it.
+- Runs in a container in production, making it handy for deploying in different machines. This point it's a bit tricky, as it uses a script for launching a container that includes multiple services, breaking the microservices architecture that only a single service should run in the same container.
+- The notification system is really advanced, also incorporating rewards (aka _badges_) to the users in the default installation without the need of installing any additional plugin for that task.
+- There's extensive documenatation on how to install it, including a handy cloud install. Also the community is huge and there are many plugins available.
+- The admin panel and the moderation options are great.
+- It's completely Open Source and its license it's not restrictive.
+
+It has some drawbacks too:
+
+- You need to learn Ruby if you want to contribute.
+- The theme support is very limited, in fact is very recent. That is changing in latests releases.
+- Every new update or new plugin install implies a complete rebuild of the container. Some developers are working on improving this point.
+- It's not _community driven_, as only the top developers choose the path it's development will follow. That doesn't imply that the community is not heard.
+- Consumes too many resources. Being written in Ruby doesn't help, but nowadays shouldn't be a problem as VPS are more and more powerful and cheap every year.
+
+There are other alternatives, like nodeBB or Flarum, that are being broadly used these days, but I've found that Discourse is one of the most complete solutions. 
+
+== The future
+
+On next years, decentralization should play a new role if local communities want to survive the corporate dominance. In case you haven't, read https://staltz.com/a-plan-to-rescue-the-web-from-the-internet.html[this article from Andre Staltz] about decentralization, p2p and new possibilities for moving the web out of the conventional internet. Even if you disagree with some points, it seems to point in good direction in order to overcome many of the limitations of current web platforms.
+
+And that's it. Please don't argue too much and **contribute**. People will be grateful ;D

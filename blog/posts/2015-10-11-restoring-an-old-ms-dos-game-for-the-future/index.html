@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdn.muicss.com/mui-0.10.2/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.2/js/mui.min.js"></script>
+    <link href="/dist/blog.css" rel="stylesheet" type="text/css" />
+
+    <title>Manel Villar blog - Restoring an old MS-DOS game for the future</title>
+
+  </head>
+
+  <body>
+    <!-- Tutorial HTML goes here -->
+	<div id="sidebar" style="display:none">
+	  <div class="mui--text-light mui--text-display1 mui--align-vertical"><a href="/blog">Manel Vilar's Blog</a></div>
+      <div id="sidedrawer">
+          <ul>
+              <li><strong><a href="/">- Home page</a></strong></li>
+              <li><strong><a href="https://medium.com/@fallenapples">- Medium articles</a></strong></li>
+              <li><strong><a href="https://github.com/manelvf">- Github</a></strong></li>
+              <li><strong><a href="mailto:eu@manel.pro">- Contact</a></strong></li>
+              <li><strong><a href="/blog/rss.xml">- RSS</a></strong></li>
+
+	      <li>
+<!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup" style="background-color: #00A896">
+<form action="https://manel.us8.list-manage.com/subscribe/post?u=99a3f462ec3efaae64ea213a8&amp;id=65601ca838" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<h2>Subscribe</h2>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_99a3f462ec3efaae64ea213a8_65601ca838" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+
+</li>
+
+          </ul>
+      </div>
+	</div>
+
+<div class="mui-row">
+  <div class="mui-col-sm-10 mui-col-sm-offset-1">
+    <br>
+    <br>
+	<div id="content" class="mui-container-fluid">
+
+    <div>
+        <h1>Manel.pro blog</h1>
+    </div>
+
+    <div class="mui-container-fluid">
+      <ul id="linkbar">
+          <li><strong><a href="/">Home page</a></strong></li>
+          <li><strong><a href="/blog">This Blog</a></strong></li>
+          <li><strong><a href="//medium.com/@fallenapples">Medium articles</a></strong></li>
+          <li><strong><a href="//github.com/manelvf">Github</a></strong></li>
+          <li><strong><a href="mailto:eu@manel.pro">Contact</a></strong></li>
+          <li><strong><a href="/blog/rss.xml">RSS</a></strong></li>
+      </ul>
+    </div>
+
+
+        <div class="mui--text-headline title">Restoring an old MS-DOS game for the future</div>
+			<div class="mui"> 2015-10-11</div>
+		<br />
+		<br />
+        <div id="contents">
+            <div class="sect1">
+<h2 id="_the_game">The Game</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In 1997, I was learning programming and of course my interest was how to develop games. Internet was still not fully deployed in my town, but anyway I managed to buy some magazines that provided me the good old <a href="http://sourceforge.net/projects/c--/">Sphinx C-- compiler</a> and also some documentation on how draw pixels in a screen, mostly <a href="http://archive.gamedev.net/archive/reference/listed82.html?categoryid=130">Denthor&#8217;s Asphyxia tutorials</a>.</p>
+</div>
+<div class="paragraph">
+<p>Unfortunately, I lost the original source code, which is a pity. I would be so funny to see again my beautiful lines of code, almost twenty years later. But luckily, I still have the binary.</p>
+</div>
+<div class="paragraph">
+<p>The game was called <strong>"Lume Infernal"</strong> and is based in the classic "Spider" arcade game, where a spider was "filling" the screen with its web until a certain percentage of the screen was fulfilled. When covering the screen, an image was being revealed and it was completely shown after getting the goal, usually an 75 or 80%. Some "enemies" would try to stop the goal, moving across the 20 screens. After passing the last one, the game is finished.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_technical_details">Technical details</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The unveiling effect was done using a binary mask, like the collision detection algorithm. So, in every frame, the mask calculations were performed, and the game status was updated accordingly. A bit like ReactJS and Redux are trying to do these days. Just kidding.</p>
+</div>
+<div class="paragraph">
+<p>The graphic mode was 320x200 with a palette of 256 colors, also called mode 13h. That mode started to be a obselete a few years before, but it was really easy to code. The best thing is that a single screen fitted in one memory segment (64kb). Back then memory management was a mess in MS-DOS, as you usually needed to do a direct access for speed reasons, and there was <a href="https://en.wikipedia.org/wiki/Memory_segmentation">a limit was 64 kbs per segment in a total of 640kb</a>, a big number that came from Bill Gates imagination (sic). That leaded to an incredible number of problems, especially in games, where every kilobyte was needed, and you even had to fight with the operating system for it. Thus a number of solutions appeared, each one of them with their pros and contras. Took a while for Windows, almost to the early 2000s, to be a consolidated gaming platform and to be able to offer a similar performance to the good old single process DOS and solve or at least hide for the developers the memory issues. Even now, memory access and management keeps being a <a href="https://lwn.net/Articles/250967/">tricky part</a> of the development process.</p>
+</div>
+<div class="paragraph">
+<p>The programming language used was <a href="http://barryk.org/goosee/cmm/">Sphinx C--</a>, a sort of mix of C and assembler, developed by a Peter Cellik, a guy from British Columbia in Canada, and that was really easy to find and download these romantic days on the 56k modem internet era. There are still some webpages where you can find some information about it. It had even an IDE and some demo programs that were really useful to learn the basic effects. The language itself was coded in Turbo Pascal.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_now_dos_games_can_run_in_a_browser">Now DOS Games can run in a browser</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It has been here for a while, but thanks to all the work done by the guys from <a href="https://github.com/kripken/emscripten">emscripten</a>, it&#8217;s possible to compile C/C++ to a Javascript target. That means that a lot of interesting software can be executed in the browser, like the <a href="https://github.com/dreamlayers/em-dosbox">DOSBox emulator</a>. And then other people put it even more simple making all that work together: <a href="https://js-dos.com/">js-dos</a>. You can see once more how the open-source community works: different efforts put together.</p>
+</div>
+<div class="paragraph">
+<p>Speed was not the problem, as emulation is always slower but today&#8217;s computers are crazy fast compared with 90&#8217;s standards. Neither was to find hosting place, as the result is fully static and Github is good enought in these cases.</p>
+</div>
+<div class="paragraph">
+<p>I had to replace the original images with new content, in order to make it suitable for all kind of public ;) . As I didn&#8217;t keep the original sources, there was a little problem having to adapt the new photos to the old palette. Luckily The Gimp came to the rescue. Using it, it&#8217;s possible to manipulate fairly well old images in the custom RAW format I originally used. Also I could rescue and reuse the original pallete I borrowed from a PCX image that was still included in the DOS game&#8217;s zip package.</p>
+</div>
+<div class="paragraph">
+<p>The implementation of the webpage that hosts the game was only customizing the example HTML file that comes as an example with <strong>js-dos</strong>. And that&#8217;s all. I didn&#8217;t use jQuery for small bits of Javascript that the page uses. Let&#8217;s keep that trend so we can retire the good old library and replace it with browser standards.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_final_result">Final Result</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>And you can see the result here: <a href="https://manelvf.github.io/lumeinfernal/">The Astonishing "Lume Infernal</a>. Still playable and still fun, it&#8217;s possible to play it decently with the mouse. The first versions used the arrow keys to move the main character, but players complained that mouse would be much more handy in this kind of game. Notice that the "enemies" increase their speed each four levels, to the point the last levels to be almost unplayable. Still a lot of fun remembering the 90&#8217;s games look and feel.</p>
+</div>
+<div class="paragraph">
+<p>Enjoy it and have fun!!</p>
+</div>
+</div>
+</div>
+        </div>
+	</div>
+  </div>
+</div>
+
+<footer>
+  <div class="mui-container mui--text-center">
+    Made with ♥ by <a href="https://www.manel.pro">Manel Vilar</a>
+  </div>
+
+
+</footer>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+// = Your Blog title
+= Postmorkem of JS1K 2018 - The Search for Golden Coins
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+// :hp-tags: HubPress, Blog, Open_Source,
+// :hp-alt-title: My English Title
+
+As some of you already know, *JS1K* is my favourite code golfing competition. In fact is the only one I have attended in latest years. To create something quickly in only 1024 is both a challenge and a lot of fun. This year 2018, theme was "The volatile Coin Mine", so I decided create my own mine that you can find here:
+
+https://js1k.com/2018-coins/demo/3186
+
+You can browse the source code too in the link, and I will post it in this website.
+
+It's the classical canvas demo and it doesn't have any major technical accomplisment, but I'm gonna disect it. Let's start for the way the mine is generated:
+
+[source, javascript]
+----
+var mine = [];
+for (let i=0; i < ROWS; i++){
+  let cells = parseInt(Math.random() * (ROWS - 1)) + 1;
+    
+  let line = [];
+  for (let j=0; j < cells; j++) {
+    line.push(!parseInt(Math.random() * 5));
+  }
+  mine.push([cells, line]);
+}
+----
+
+The _mine_ is a list of cells that is composed using a nested loop, with a bit of randomness. I use a tuple for storing the both the length of the row and an array marking the cells that will have a coin (true if they have, false otherwise).
+
+Now the interesting part starts:
+
+[source, javascript]
+----
+var id = c.createImageData(8, 8);
+var data = id.data;
+for (let i = 0; i < data.length; i += 4) {
+  let mcolor = parseInt(Math.random() * 256);
+  data[i] = mcolor;
+  data[i+1] = parseInt(mcolor/2);
+  data[i+2] = 0;
+  data[i+3] = 255;
+}
+
+createImageBitmap(id).then(function(bi) {
+  pt = c.createPattern(bi, "repeat");
+  window.requestAnimationFrame(function(){
+    render(pt); 
+  });
+});
+----
+
+I wanted to create a pattern for the mine tiles background, and for that, three native methods are called:
+
+- createImageData: creates an array with the given dimensions (8, 8) size, that can be accessed and modified. I use a variation of the brown color for the palette, handled by the _mcolor_ variable.
+- createImageBitmap: with the data array created in the previous step, an image bitmap that can be used to draw in the canvas object. The tricky part: the method returns a promise, which breaks the linearity of the execution and forced to call the main render method in the promise callback. Another option would be to check in the code if the Bitmap was created and render it conditionally, but for the demo I chose the callback approach.
+- createPattern: once the bitmap is created, we define a pattern that repeats itself for been used when filling canvas figures.
+
+For rendering everything I use another nested loop. A common technique for these kind of demos is to use only a single loop and compute everything on it. Let's have a look to it:
+
+[source, javascript]
+----
+function drawMine(pt) {
+  for (let i=0; i<mine.length; i++) {
+    for (let j=0; j<mine[i][0]; j++) {
+      let x = (ROWS/2) - parseInt(mine[i][0]/2) + j;
+      drawTile(x, i, pt);
+      
+      // clean the coin where the dude is  
+      if (i == uy && x == ux) {
+         if (mine[i][1][j])  {
+           mine[i][1][j] = 0;
+           coins += 1;
+         };
+      }    
+      
+      if (mine[i][1][j]) {
+        drawCoin(x, i);
+      }
+    }
+  }
+}
+----
+
+This formula centers the tiles, so rows can have a different lenght but they still are connected:
+
+  let x = (ROWS/2) - parseInt(mine[i][0]/2) + j;
+
+Starting in the center (*ROWS/2*), I substract half of the row lenght (*mine[i][0]/2*) and add the iterator *j*, which is the cell index. 
+  
+For drawing the coin, I used one ellipse and a half. Drawing the _hero_ was easier, as I only used another rect. How to draw complex figures using Canvas primitives would be a subject for another post, but outside demos, has very little interest. You can use SVG and have much better tooling (Inkscape, etc...)
+
+At the end, there's an event listener that uses the arrow keys for modifying the rendering parameters so the main character can move. What is missing is some collision detection method so that character couldn't move outside of the limits of the mine. But there are still around 100 bytes to reach the limit, so it would be possible to implement;)
+
+Also in order to save some bytes, it's possible to wrap all the calls to _Math.random_ of the whole script in a single method to keep saving space. Probably using arrow methods also helps. There are quite a few handy tricks in order to be able to add more stuff with minimal penalty.
+
+As you can see, it's really easy to do very simple demo using very few lines of code. And also it's a nice way of learning new things like _semi-obscure_ standard JS methods that otherwise you wouldn't have a chance to use in daily development. 
+
+Happy codin'!
+
+
+
+
+
+
+
+

@@ -7,28 +7,20 @@ var Data = {
       <p>
       Some time ago I started to contribute and/or helped to initialize a few Open Source projects. Please don't hesitate on contact me in order to collaborate or ask any question about them. 
       </p>
-        <p>You can find me on:</p>
-        <ul class="square">
-          <li><a href="http://twitter.com/galchwyn">Twitter</a></li>
-          <li><a href="http://facebook.com/manel.villar">Facebook</a></li>
-          <li><a href="http://http://es.linkedin.com/in/manelvillar" >LinkedIn</a></li>
-          <li><a href="http://github.com/manelvf">Github</a></li>
-	  <li><a href="https://www.slideshare.net/manelvillar/">Slideshare</a></li>
-          <li>Or simply by email: <a href="mailto:manelvf@gmail.com" >manelvf@gmail.com</a></li>
-        </ul>
+        <p>You can find me on <a href="http://twitter.com/galchwyn">Twitter</a>,
+          <a href="http://facebook.com/manel.villar">Facebook</a>,
+          <a href="http://http://es.linkedin.com/in/manelvillar" >LinkedIn</a>,
+          <a href="http://github.com/manelvf">Github</a>,
+	      <a href="https://www.slideshare.net/manelvillar/">Slideshare</a>
+          or simply by <a href="mailto:eu@manel.pro" >email</a>.
 	`,
 
 	"links": `
-	<p>You might be interested in checking my technical blog: <a href="https://manelvf.github.io/blog">The Fallen Apples</a>.
+	<p>You might be interested in checking my technical blog: <a href="/blog">The Fallen Apples</a>. I write sometimes in <a href="https://medium.com/@fallenapples">Medium</a> too.
 	</p>
-	<p>Some experiments:
-      <ul class="square"> <li><a href="https://github.com/manelvf/Transboard">Transboard</a>: Collaborative tool for application file translations. It's goal it's to provide a way to organize translation work when multiple translatores are collaborating on the same project. [Ruby/Sinatra]</li>
-        <li><a href="https://github.com/manelvf/forestal2">Forestal</a>: this application was developed as part of a timber delivery company chain of tools. It's main goal is goods tracking. [Python/Django] </li>
-			</ul>
-
-      <p>My <a href="http://js1k.com">JS1K</a> and JS demo entries:</p>
+      <p>These are my <a href="http://js1k.com">JS1K</a> and JS demo entries:</p>
       <ul class="square">
-        <li><a href="http://js1k.com/2010-first/demos#id38">Pulse</a>. A light "pulsar" made for the first compo (2010)</li>
+        <li><a href="http://js1k.com/2010-first/demos/38">Pulse</a>. A light "pulsar" made for the first compo (2010)</li>
         <li><a href="http://js1k.com/2012-love/demo/1025">Hidden Love</a>. Entry for 2012 compo, themed "Love"</li>
         <li><a href="http://manelvf.com/drones">Battle of the Drones</a>. Entry for <a href="http://ludumdare.com">Ludum Dare 25</a></li>
       </ul>
