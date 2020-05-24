@@ -22,7 +22,7 @@ var Data = {
       <ul class="square">
         <li><a href="http://js1k.com/2010-first/demos/38">Pulse</a>. A light "pulsar" made for the first compo (2010)</li>
         <li><a href="http://js1k.com/2012-love/demo/1025">Hidden Love</a>. Entry for 2012 compo, themed "Love"</li>
-        <li><a href="https://www.manelvf.com/drones">Battle of the Drones</a>. Entry for <a href="http://ludumdare.com">Ludum Dare 25</a></li>
+        <li><a href="https://manel.pro/drones">Battle of the Drones</a>. Entry for <a href="http://ludumdare.com">Ludum Dare 25</a></li>
       </ul>
 
         <ul class="square">
