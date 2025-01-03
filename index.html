@@ -63,7 +63,7 @@
 		</div>
 
     <div class="sixteen columns clearfix center">
-      &copy; Manel Villar 2011-2020
+	    &copy; Manel Villar 2011-<span id="last_year_id">2020</span>
     </div><!-- container -->
 
 	</div><!-- container -->
@@ -84,6 +84,8 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+
+  last_year_id.innerHTML = new Date().getFullYear();
 
 </script>
 
